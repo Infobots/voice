@@ -1,22 +1,4 @@
 # Voice Aaron Kalvani ai@oxon.org
-import matplotlib.pyplot as plt
-from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
-from matplotlib.figure import Figure
-from PyQt5.QtCore import Qt, QStringListModel
-from PyQt5.QtWidgets import *
-from encoder.inference import plot_embedding_as_heatmap
-from toolbox.utterance import Utterance
-from pathlib import Path
-from typing import List, Set
-import sounddevice as sd
-import soundfile as sf
-import numpy as np
-# Aaron Kalvani - Kalvani Infobots ai@oxon.org
-from time import sleep
-import umap
-import sys
-from warnings import filterwarnings, warn
-filterwarnings("ignore")
 
 
 colormap = np.array([
