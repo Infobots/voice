@@ -1,6 +1,4 @@
 # Voice Aaron Kalvani ai@oxon.org
-
-
 colormap = np.array([
     [0, 127, 70],
     [255, 0, 0],
@@ -17,40 +15,21 @@ colormap = np.array([
     [183, 183, 183],
     [76, 255, 0],
 ], dtype=np.float) / 255 
-
-default_text = \
-    "Welcome " \
-    "yourself.\nOnce its embedding has been created, you can synthesize any text written here.\n" \
-    "The synthesizer expects to generate Infobots Voice Feedback " \
-    "outputs that are somewhere between 5 and 12 seconds.\nTo mark breaks, write a new line. " \
-    "Each line will be treated separately.\nThen, they are joined together to make the final " \
-    "spectrogram. Use the vocoder to generate audio.\nThe vocoder generates almost in constant " \
-    "time, so it will be more time efficient for longer inputs like this one.\nOn the left you " \
-    "have the embedding projections. Load or record more utterances to see them.\nIf you have " \
-    "at least 2 or 3 utterances from a same speaker, a cluster should form.\nSynthesized " \
-    "utterances are of the same color as the speaker whose voice was used, but they're " \
-    "represented with a cross."
-
-   
 class UI(QDialog):
     min_umap_points = 4
     max_log_lines = 5
     max_saved_utterances = 20
-    
     def draw_utterance(self, utterance: Utterance, which):
         self.draw_spec(utterance.spec, which)
         self.draw_embed(utterance.embed, utterance.name, which)
-    
     def draw_embed(self, embed, name, which):
         embed_ax, _ = self.current_ax if which == "current" else self.gen_ax
         embed_ax.figure.suptitle("" if embed is None else name)
-        
         ## Embedding
         # Clear the plot
         if len(embed_ax.images) > 0:
             embed_ax.images[0].colorbar.remove()
         embed_ax.clear()
-        
         # Draw the embed
         if embed is not None:
             plot_embedding_as_heatmap(embed, embed_ax)
