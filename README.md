@@ -11,7 +11,7 @@ from typing import List, Set
 import sounddevice as sd
 import soundfile as sf
 import numpy as np
-# from sklearn.manifold import TSNE         # Aaron Kalvani - Kalvani Infobots 
+# Aaron Kalvani - Kalvani Infobots ai@oxon.org
 from time import sleep
 import umap
 import sys
