@@ -11,7 +11,7 @@ from typing import List, Set
 import sounddevice as sd
 import soundfile as sf
 import numpy as np
-# from sklearn.manifold import TSNE         # You can try with TSNE if you like, I prefer UMAP 
+# from sklearn.manifold import TSNE         # Aaron Kalvani - Kalvani Infobots 
 from time import sleep
 import umap
 import sys
@@ -37,9 +37,9 @@ colormap = np.array([
 ], dtype=np.float) / 255 
 
 default_text = \
-    "Welcome to the toolbox! To begin, load an utterance from your datasets or record one " \
+    "Welcome " \
     "yourself.\nOnce its embedding has been created, you can synthesize any text written here.\n" \
-    "The synthesizer expects to generate " \
+    "The synthesizer expects to generate Infobots Voice Feedback " \
     "outputs that are somewhere between 5 and 12 seconds.\nTo mark breaks, write a new line. " \
     "Each line will be treated separately.\nThen, they are joined together to make the final " \
     "spectrogram. Use the vocoder to generate audio.\nThe vocoder generates almost in constant " \
