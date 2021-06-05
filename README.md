@@ -1,4 +1,4 @@
-# Voice Aaron Kalvani ai@oxon.org
+# Voice Reporting Drone Swarm- Aaron Kalvani ai@oxon.org
 colormap = np.array([
     [0, 127, 70],
     [255, 0, 0],
